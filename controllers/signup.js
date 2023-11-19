@@ -27,7 +27,7 @@ async function InsertVerifyUser(name,email,password){
         })
 
 
-        const activationLink = `http://localhost:4000/signup/${token}`;
+        const activationLink = `https://glittering-fairy-e558b7.netlify.app/signup/${token}`;
         const content =`<h4>Hi,There</h4>
         <h5>Welcome to the app</h5><p>Thank you for Signing up.Click on the below link to activate your account</p>
         <a href="${activationLink}">Click here</a>
