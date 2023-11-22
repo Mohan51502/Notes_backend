@@ -29,7 +29,10 @@ async function CheckUser(email){
 async function AuthenticateUser(email,password){
     try {
         const userCheck = await User.findOne({email:email});
+        console.log("Usercheck",userCheck);
+        console.log(password);
         const validpassword = await bcrypt.compare(password,userCheck.password)
+        console.log("Validpassword",validpassword);
         if(validpassword){
             const token = jwt.sign({email},process.env.login_secret_key)
             const response = {
