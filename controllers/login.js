@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const  jwt = require('jsonwebtoken');
 
 const dotenv = require("dotenv");
-const client = require("../redis");
+//const client = require("../redis");
 const { json } = require("express");
 dotenv.config();
 
@@ -42,7 +42,7 @@ async function AuthenticateUser(email,password){
                 token:token,
                 status :true
             }
-            await client.set(`key-${email}`,JSON.stringify(response))
+          //  await client.set(`key-${email}`,JSON.stringify(response))
             await User.findOneAndUpdate({email:userCheck.email},{$set:{token:token}},{new:true})
             return response;
         } 

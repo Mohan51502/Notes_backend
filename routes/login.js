@@ -1,15 +1,15 @@
 const express = require("express");
 const { AuthenticateUser } = require("../controllers/login");
-const client = require("../redis");
+//const client = require("../redis");
 const router = express.Router();
 
-client.connect()
-.then(() =>{
-    console.log("Redis Connected");
-})
-.catch((error) =>{
-    console.log(error);
-})
+// client.connect()
+// .then(() =>{
+//     console.log("Redis Connected");
+// })
+// .catch((error) =>{
+//     console.log(error);
+// })
 
 
 router.post("/",async(req,res) =>{
